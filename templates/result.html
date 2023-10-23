@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5eec2;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #416a59;
+            display: flex;
+            justify-content: center; /* Align items horizontally to the center */
+            align-items: center; /* Align items vertically to the center */
+            height: 60px; /* Set the height of the navigation bar */
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .topnav a:hover {
+            background-color: #416a59;
+            color: black;
+        }
+
+        .topnav a.active {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 60px); /* Subtract the height of the navigation bar */
+        }
+
+        h1, h3, p {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        h1 {
+            font-size: 30px; /* Increased font size of "Prediction Result" */
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        button {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <!-- Changed the h2 element to a span with styling -->
+        <a class="active" href="#news"><span style="font-size: 24px; font-weight: bold;">Tuberculosis Disease Prediction</span></a>
+    </div>
+    <div class="content">
+        <h1>Prediction Result</h1>
+        <h3>The Chest X-ray is: {{ prediction }}</h3>
+        <img src="{{ img_path }}" alt="Uploaded Image">
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
